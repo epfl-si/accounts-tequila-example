@@ -1,1 +1,3 @@
-console.log(`Greetings from ${module.id}!`);
+import Tequila from "meteor/epfl:accounts-tequila";
+
+Tequila.start();
