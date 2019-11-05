@@ -1,6 +1,6 @@
 import assert from "assert";
 
-describe("accounts-tequila-example2", function () {
+describe("accounts-tequila-example", function () {
   it("package.json has correct name", async function () {
     const { name } = await import("../package.json");
     assert.strictEqual(name, "accounts-tequila-example");
