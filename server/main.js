@@ -1,10 +1,12 @@
 import Tequila from "meteor/epfl:accounts-tequila";
 import { Meteor } from "meteor/meteor";
+import debug_ from 'debug';
+const debug = debug_('accounts-tequila-example');
  
 Meteor.startup(() => {
   Tequila.start({
     getUserId(tequila) {
-      console.log(tequila);
+      debug(tequila);
       return tequila.user;
     }
   });
