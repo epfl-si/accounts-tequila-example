@@ -1,5 +1,5 @@
 | Connector | Attributes      | Description                                                                                                             |
-| --------- | ----------------| ----------------------------------------------------------------------------------------------------------------------- |
+| --------- | --------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | LDAP      | `name`          | Family name                                                                                                             |
 | LDAP      | `firstname`     | Given name                                                                                                              |
 | LDAP      | `displayname`   | Given name + family name                                                                                                |
@@ -28,7 +28,10 @@
 | LDAP      | `faculty`       | Faculty's unit acronym (f.i. STI)                                                                                       |
 | LDAP      | `Institute`     | Institute's unit acronym (f.i. STI-SG)                                                                                  |
 | LDAP      | `group`         | List of group names the person belongs to                                                                               |
-| --        | --              | --                                                                                                                      |
+
+
+| Connector | Attributes                            | Description                                                              |
+| --------- | ------------------------------------- | ------------------------------------------------------------------------ |
 | ACCRED    | `role-respadmin`                      | List of units where the person has role `respadmin`                      |
 | ACCRED    | `role-respinfo`                       | List of units where the person has role `respinfo`                       |
 | ACCRED    | `role-respinfra`                      | List of units where the person has role `respinfra`                      |
@@ -141,9 +144,15 @@
 | ACCRED    | `droit-ATELA.admin`                   | List of units where the person has right `ATELA.admin`                   |
 | ACCRED    | `droit-ATELA.zones`                   | List of units where the person has right `ATELA.zones`                   |
 | ACCRED    | `droit-Chronos.reporting.NR`          | List of units where the person has right `Chronos.reporting.NR`          |
-| --        | --                                    | --                                                                       |
+
+
+| Connector | Attributes      | Description                               |
+| --------- | --------------- | ----------------------------------------- |
 | CADI      | `camiprocardid` | Camipro card number                       |
 | CADI      | `unitresp`      | Sciper number ot the unit's manager       |
 | CADI      | `group`         | List of group names the person belongs to |
-| --        | --              | --                                        |
+
+
+| Connector | Attributes | Description                                      |
+| --------- | ---------- | ------------------------------------------------ |
 | SCO       | `memberof` | List of group and unit IDs the person belongs to |

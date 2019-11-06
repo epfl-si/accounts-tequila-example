@@ -72,7 +72,7 @@ Meteor.startup(function() {
 })
 ```
 
-That way, the attributes, `uniqueid`, `username`, `name`, `firstname`, 
+That way, the attributes `uniqueid`, `username`, `name`, `firstname`, 
 `displayname`, `personaltitle` and `email` will be requested to and returned by
 [Tequila](https://tequila.epfl.ch).
 
