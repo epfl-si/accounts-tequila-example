@@ -3,12 +3,21 @@
 This is a demo app which use [accounts-tequila](https://atmospherejs.com/epfl/accounts-tequila)
  ([sources](https://github.com/epfl-idevelop/accounts-tequila)).
 
-This app is based on the Meteor bare example (`meteor create --minimal .`).
+This app is based on the Meteor minimal example (`meteor create --minimal .`).
 
 
 ## Prerequisites
 
 You'll need [Meteor](https://www.meteor.com/install).
+
+
+## Tests using this project
+
+These command will guide you to get this project up and running on your machine:
+1. `git clone git@github.com:epfl-idevelop/accounts-tequila-example.git`
+1. `npm i`
+1. `meteor`
+1. Then you can head to [https://localhost:3000](https://localhost:3000)
 
 
 ## Commands to create from scratch (minimal requirements)
@@ -24,13 +33,14 @@ You'll need [Meteor](https://www.meteor.com/install).
     })
  ```
 * Add `client/main.js`:
- ```
+```
     import Tequila from 'meteor/epfl:accounts-tequila';
     Tequila.start();
 ```
 
 These are the minimal requirements to use `accounts-tequila`. It will use the
 `username` as default ID and all parts of the site will require authentication.
+
 
 ## How to use another ID (e.g. sciper)
 
@@ -81,7 +91,7 @@ That way, the attributes `uniqueid`, `username`, `name`, `firstname`,
 [Tequila](https://tequila.epfl.ch).
 
 
-## Development - Test an accounts-tequila new version locally
+## Development - Test a new `accounts-tequila` version locally
 
 In order to test un-published version, you need a `packages` folder at the root
 of the project (see [Writing Atmosphere
