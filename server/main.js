@@ -10,11 +10,14 @@ Meteor.startup(() => {
     control: ['/private'],
     getUserId(tequila) {
       debug(tequila);
-      return tequila.user;
+      return tequila.uniqueid;
     },
     upsert: (tequila) => ({ $set: {
+      profile: {
+        sciper: tequila.uniqueid
+      },
       username: tequila.user,
-      emails: tequila.email,
+      emails: [ tequila.email ],
     }}),
   });
 });

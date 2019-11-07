@@ -7,28 +7,32 @@ class Private extends Component {
     let isLoading = this.props.currentUser === undefined;
     if (isLoading) {
       return <h1>Loading</h1>;
+    } else {
+      console.log(this.props.currentUser);
+      return (
+        <Fragment>
+          <h1>Private</h1>
+          <table className="table">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Email</th>
+                <th scope="col">Username</th>
+                <th scope="col">sciper</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{ this.props.currentUser._id }</td>
+                <td><a href={"mailto:" + this.props.currentUser.emails }>{ this.props.currentUser.emails }</a></td>
+                <td><a href={"https://people.epfl.ch/" + this.props.currentUser._id } target="_blank">{ this.props.currentUser.username }</a></td>
+                <td>{ this.props.currentUser.profile.sciper }</td>
+              </tr>
+            </tbody>
+          </table>
+        </Fragment>
+      )
     }
-    return (
-      <Fragment>
-        <h1>Private</h1>
-        <table>
-          <thead>
-            <tr>
-              <td>ID</td>
-              <td>Email</td>
-              <td>UserName</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>{ this.props.currentUser._id }</td>
-              <td>{ this.props.currentUser.emails }</td>
-              <td>{ this.props.currentUser.username }</td>
-            </tr>
-          </tbody>
-        </table>
-      </Fragment>
-    )
   }
 }
 
