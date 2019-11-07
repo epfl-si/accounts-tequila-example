@@ -17,13 +17,17 @@ You'll need [Meteor](https://www.meteor.com/install).
 * The command `meteor` should start the minimal app.
 * `meteor add epfl:accounts-tequila` add the package and its dependencies.
 * Add `server/main.js`:
+```
     import Tequila from 'meteor/epfl:accounts-tequila';
     Meteor.startup(function() {
       Tequila.start();
     })
+ ```
 * Add `client/main.js`:
+ ```
     import Tequila from 'meteor/epfl:accounts-tequila';
     Tequila.start();
+```
 
 These are the minimal requirements to use `accounts-tequila`. It will use the
 `username` as default ID and all parts of the site will require authentication.
