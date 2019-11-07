@@ -6,9 +6,15 @@ const debug = debug_('accounts-tequila-example');
  
 Meteor.startup(() => {
   Tequila.start({
+    request: ['uniqueid', 'email'],
+    control: ['/private'],
     getUserId(tequila) {
       debug(tequila);
       return tequila.user;
-    }
+    },
+    upsert: (tequila) => ({ $set: {
+      username: tequila.user,
+      emails: tequila.email,
+    }}),
   });
 });
