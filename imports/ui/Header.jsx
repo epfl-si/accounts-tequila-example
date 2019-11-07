@@ -12,14 +12,14 @@ export default Header = () => {
               Doc
             </a>
             <div className="dropdown-menu" >
-              <NavLink className="dropdown-item" to="/doc">Readme</NavLink>                                
-              <NavLink className="dropdown-item" to="/TEQUILA_ATTRIBUTES.md">Tequila attributes</NavLink>
+              <Link className="dropdown-item" to="/doc/README.md">Readme</Link>
+              <Link className="dropdown-item" to="/doc/TEQUILA_ATTRIBUTES.md">Tequila attributes</Link>
             </div>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="/private">Private</a>
           </li>
-        </ul>                                  
+        </ul>
       </div>
     </header>
   )
