@@ -10,5 +10,5 @@ Meteor.startup(() => {
 });
 
 if (Meteor.isDevelopment) {
-  // Put your collections
+  window.Users = Meteor.users;
 }

@@ -4,11 +4,10 @@ import { withTracker } from 'meteor/react-meteor-data';
 class Private extends Component {
   
   render() {
-    let isLoading = this.props.currentUser === undefined;
-    if (isLoading) {
+    
+    if (!this.props.isLoaded) {
       return <h1>Loading</h1>;
     } else {
-      console.log(this.props.currentUser);
       return (
         <Fragment>
           <h1>Private</h1>
@@ -22,12 +21,18 @@ class Private extends Component {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>{ this.props.currentUser._id }</td>
-                <td><a href={"mailto:" + this.props.currentUser.emails }>{ this.props.currentUser.emails }</a></td>
-                <td><a href={"https://people.epfl.ch/" + this.props.currentUser._id } target="_blank">{ this.props.currentUser.username }</a></td>
-                <td>{ this.props.currentUser.profile.sciper }</td>
+              
+              { this.props.users.map((user, index) => (
+                
+              <tr key={ index }>
+                <td>{ user._id }</td>
+                <td><a href={"mailto:" + user.emails[0].address }>{ user.emails[0].address }</a></td>
+                <td><a href={"https://people.epfl.ch/" + user._id } target="_blank">{ user.username }</a></td>
+                <td>{ user.profile.sciper }</td>
               </tr>
+
+              ))}
+              
             </tbody>
           </table>
         </Fragment>
@@ -37,9 +42,18 @@ class Private extends Component {
 }
 
 export default withTracker(() => {
-  console.log(Meteor.userId());
-  let user = Meteor.users.findOne({'_id': Meteor.userId()});
+  // Client
+  Meteor.subscribe('userData');
+
+  let users = Meteor.users.find({}).fetch();
+  let isLoaded = true;
+
+  users.map( user => { 
+    isLoaded = isLoaded && 'emails' in user;
+  })
+  
   return {  
-    currentUser: user,
+    isLoaded: isLoaded,
+    users: users,
   };  
 })(Private);
