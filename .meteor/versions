@@ -79,9 +79,5 @@ tmeasday:check-npm-versions@0.3.2
 tomwasd:history-polyfill@0.0.1
 tracker@1.2.0
 underscore@1.0.10
-<<<<<<< Updated upstream
-webapp@1.8.0
-=======
 webapp@1.8.2
->>>>>>> Stashed changes
 webapp-hashing@1.0.9
