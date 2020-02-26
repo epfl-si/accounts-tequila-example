@@ -115,7 +115,7 @@ This is the most easiest way to secure site or pages, but you won't have the
 possibility to have separate rights for different spaces (no granularity).
 
 1. e.g. if one want to the `/private` to be accessed only by the members of the
-group `epfl-dojo` or the group `idev-fsd-membres` :
+   group `epfl-dojo` or the group `idev-fsd-membres`:
 ```
 Tequila.start({
 [...]
@@ -124,12 +124,23 @@ Tequila.start({
 [...]
 }),
 ```
-2. e.g. if one want to the `/private` to be accessed only by the username `kermit` :
+1. e.g. if one want to the `/private` to be accessed only by the username `kermit`:
 ```
 Tequila.start({
 [...]
   control: ['/private'],
   require: ['username=kermit'],
+[...]
+}),
+```
+1. e.g. if one want to the `/private` to be accessed only by user in groups
+   `epfl-dojo` AND `idev-fsd-membres` with usernames starting with `nbo` OR
+   `cha`:
+```
+Tequila.start({
+[...]
+  control: ['/private'],
+  require: ['(group=epfl-dojo&group=idev-fsd-membres)&(username=~nbo|username=~cha)'],
 [...]
 }),
 ```
