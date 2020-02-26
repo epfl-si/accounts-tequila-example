@@ -37,10 +37,10 @@ class Header extends Component {
                 Roles
               </a>
               <div className="dropdown-menu" >
-                <Link className="dropdown-item" to="/private/editor">Editor (private)</Link>
-                <Link className="dropdown-item" to="/editor">Editor</Link>
-                <Link className="dropdown-item" to="/private/admin">Admin (private)</Link>
-                <Link className="dropdown-item" to="/admin">Admin</Link>
+                <a className="dropdown-item" href="/private/editor">Editor (private)</a>
+                <a className="dropdown-item" href="/editor">Editor</a>
+                <a className="dropdown-item" href="/private/admin">Admin (private)</a>
+                <a className="dropdown-item" href="/admin">Admin</a>
               </div>
             </li>
           </ul>
