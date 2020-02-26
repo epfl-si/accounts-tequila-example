@@ -91,6 +91,62 @@ That way, the attributes `uniqueid`, `username`, `name`, `firstname`,
 [Tequila](https://tequila.epfl.ch).
 
 
+## How to limit access to specific pages
+
+If one wants to have both public and private spaces on a web site, the tequila
+option `control` can have a list of routes that needs authentication.
+
+```
+Tequila.start({
+[...]
+  control: ['/private', '/other'],
+[...]
+}),
+```
+
+
+## Limit allowed user within the Tequila request
+
+The tequila server have a `require` parameter to specify a filter on attributes
+that one needs to be allowed. It's similar to the `TequilaAllowIf` in the apache
+module.
+
+This is the most easiest way to secure site or pages, but you won't have the
+possibility to have separate rights for different spaces (no granularity).
+
+1. e.g. if one want to the `/private` to be accessed only by the members of the
+group `epfl-dojo` or the group `idev-fsd-membres` :
+```
+Tequila.start({
+[...]
+  control: ['/private'],
+  require: ['group=epfl-dojo|idev-fsd-membres'],
+[...]
+}),
+```
+2. e.g. if one want to the `/private` to be accessed only by the username `kermit` :
+```
+Tequila.start({
+[...]
+  control: ['/private'],
+  require: ['username=kermit'],
+[...]
+}),
+```
+
+
+## Limit allowed user within the application
+
+[WIP]
+
+If one wants more levels of granularity, the access control have to be built
+inside the application. That way one can develop a more adaptive way to set
+permissions on different pages or spaces of the website.
+
+In order to do that, we do recommend the
+[alanning:roles](https://guide.meteor.com/accounts.html#alanning-roles) package.
+
+
 ## Development - Test a new `accounts-tequila` version locally
 
 In order to test un-published version, you need a `packages` folder at the root
