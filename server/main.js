@@ -6,9 +6,6 @@ const debug = debug_('accounts-tequila-example');
 
 Meteor.startup(() => {
 
-  // Ensure that the default roles exists in the 'roles' collection
-  loadFixtures();
-
   // https://docs.meteor.com/api/accounts.html#Meteor-users
   // "By default, the current user’s username, emails and profile are published to the client.
   // You can publish additional fields for the current user with:"
