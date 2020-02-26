@@ -120,7 +120,7 @@ group `epfl-dojo` or the group `idev-fsd-membres` :
 Tequila.start({
 [...]
   control: ['/private'],
-  require: ['group=epfl-dojo|idev-fsd-membres'],
+  require: ['group=epfl-dojo|group=idev-fsd-membres'],
 [...]
 }),
 ```
@@ -145,6 +145,17 @@ permissions on different pages or spaces of the website.
 
 In order to do that, we do recommend the
 [alanning:roles](https://guide.meteor.com/accounts.html#alanning-roles) package.
+
+To install it: ` meteor add alanning:roles`. It will create the `roles` and
+`role-assignment` collection in MongoDB.
+
+This package expects the `roles` collection to have the defined roles' levels.
+The file `server/fixtures.js` ensures that some roles are defined (by default
+`admin`, `editor` and `default` roles are created).
+
+
+
+
 
 
 ## Development - Test a new `accounts-tequila` version locally
