@@ -26,14 +26,14 @@ These command will guide you to get this project up and running on your machine:
 * The command `meteor` should start the minimal app.
 * `meteor add epfl:accounts-tequila` add the package and its dependencies.
 * Add `server/main.js`:
-```
+```js
     import Tequila from 'meteor/epfl:accounts-tequila';
     Meteor.startup(function() {
       Tequila.start();
     })
  ```
 * Add `client/main.js`:
-```
+```js
     import Tequila from 'meteor/epfl:accounts-tequila';
     Tequila.start();
 ```
@@ -48,7 +48,7 @@ One can choose another attribute that `accounts-tequila` will uses as an ID. To
 do so, pass some option to the `Tequila.start()` function and redefine the
 `getUserId` function (`server/main.js`):
 
-```
+```js
 Meteor.startup(function() {
   Tequila.start({
         getUserId: (tequila) => {
@@ -74,7 +74,7 @@ requestable attributes. In our case, the list is available in the
 
 To request attributes, add an array to the `request` options, e.g.:
 
-```
+```js
 Meteor.startup(function() {
   Tequila.start({
         getUserId: (tequila) => {
@@ -96,7 +96,7 @@ That way, the attributes `uniqueid`, `username`, `name`, `firstname`,
 If one wants to have both public and private spaces on a web site, the tequila
 option `control` can have a list of routes that needs authentication.
 
-```
+```js
 Tequila.start({
 [...]
   control: ['/private', '/other'],
@@ -115,28 +115,28 @@ This is the most easiest way to secure site or pages, but you won't have the
 possibility to have separate rights for different spaces (no granularity).
 
 1. e.g. if one want to the `/private` to be accessed only by the members of the
-   group `epfl-dojo` or the group `idev-fsd-membres`:
-```
+   group `epfl-dojo` or the group `idev-fsd-membres`:  
+```js
 Tequila.start({
 [...]
   control: ['/private'],
   require: ['group=epfl-dojo|group=idev-fsd-membres'],
 [...]
 }),
-```
-1. e.g. if one want to the `/private` to be accessed only by the username `kermit`:
-```
+```  
+2. e.g. if one want to the `/private` to be accessed only by the username `kermit`:  
+```js
 Tequila.start({
 [...]
   control: ['/private'],
   require: ['username=kermit'],
 [...]
 }),
-```
-1. e.g. if one want to the `/private` to be accessed only by user in groups
+```  
+3. e.g. if one want to the `/private` to be accessed only by user in groups
    `epfl-dojo` AND `idev-fsd-membres` with usernames starting with `nbo` OR
-   `cha`:
-```
+   `cha`:  
+```js
 Tequila.start({
 [...]
   control: ['/private'],
@@ -163,10 +163,6 @@ To install it: ` meteor add alanning:roles`. It will create the `roles` and
 This package expects the `roles` collection to have the defined roles' levels.
 The file `server/fixtures.js` ensures that some roles are defined (by default
 `admin`, `editor` and `default` roles are created).
-
-
-
-
 
 
 ## Development - Test a new `accounts-tequila` version locally
