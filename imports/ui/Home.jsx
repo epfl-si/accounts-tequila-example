@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { Link, withRouter} from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 
 export default class Home extends Component {
@@ -13,9 +14,9 @@ export default class Home extends Component {
           Consequently, the <a href="https://docs.meteor.com/api/accounts.html" target="_blank">documentation of how to use Meteor's accounts functionality</a> is resourceful.
         </p>
         <ul>
-          <li>Please check the <a href="/doc/README.md">README.md</a> of the project.</li>
-          <li>EPFL Tequila attributes are listed <a href="/doc/TEQUILA_ATTRIBUTES.md">here</a>.</li>
-          <li>You can try to login <a href="/private">here</a>.</li>
+          <li>Please check the <Link to="/doc/README.md">README.md</Link> of the project.</li>
+          <li>EPFL Tequila attributes are listed <Link to="/doc/TEQUILA_ATTRIBUTES.md">here</Link>.</li>
+          <li>You can try to login <Link to="/private">here</Link>.</li>
         </ul>
         <hr />
         <p>Please join this project, question, issues and pull request are very welcome: <a href="https://github.com/epfl-si/accounts-tequila-example/issues">https://github.com/epfl-si/accounts-tequila-example/issues</a>.</p>
