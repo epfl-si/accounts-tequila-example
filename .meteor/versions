@@ -2,7 +2,7 @@ accounts-base@1.5.0
 alexwine:bootstrap-4@4.1.0
 allow-deny@1.1.0
 autopublish@1.0.7
-babel-compiler@7.5.1
+babel-compiler@7.5.2
 babel-runtime@1.5.0
 base64@1.0.12
 binary-heap@1.0.11
@@ -20,7 +20,7 @@ ddp-server@2.3.1
 deps@1.0.12
 diff-sequence@1.1.1
 dynamic-import@0.5.1
-ecmascript@0.14.1
+ecmascript@0.14.2
 ecmascript-runtime@0.7.0
 ecmascript-runtime-client@0.10.0
 ecmascript-runtime-server@0.9.0
@@ -34,7 +34,7 @@ htmljs@1.0.11
 id-map@1.1.0
 insecure@1.0.7
 inter-process-messaging@0.1.0
-jquery@1.0.2
+jquery@1.11.11
 localstorage@1.2.0
 logging@1.1.20
 meteor@1.9.3
