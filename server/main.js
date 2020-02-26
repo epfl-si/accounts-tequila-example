@@ -1,6 +1,11 @@
 import Tequila from "meteor/epfl:accounts-tequila";
 import { Meteor } from "meteor/meteor";
 import '../imports/api/methods';
+
+// Ensure that the default roles exists in the 'roles' collection.
+import {loadFixtures} from './fixtures';
+
+// In case you want to debug this project
 import debug_ from 'debug';
 const debug = debug_('accounts-tequila-example');
 

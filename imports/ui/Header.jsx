@@ -19,7 +19,7 @@ class Header extends Component {
       <header className="navbar navbar-expand-lg navbar-light bg-light border-bottom">
         <Link className="navbar-brand" to="/">Home</Link>
         <div className="collapse navbar-collapse">
-          <ul className="navbar-nav mr-auto"> 
+          <ul className="navbar-nav mr-auto">
             <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Doc
@@ -31,6 +31,17 @@ class Header extends Component {
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/private">Private</a>
+            </li>
+            <li className="nav-item dropdown">
+              <a className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Roles
+              </a>
+              <div className="dropdown-menu" >
+                <Link className="dropdown-item" to="/private/editor">Editor (private)</Link>
+                <Link className="dropdown-item" to="/editor">Editor</Link>
+                <Link className="dropdown-item" to="/private/admin">Admin (private)</Link>
+                <Link className="dropdown-item" to="/admin">Admin</Link>
+              </div>
             </li>
           </ul>
         </div>
@@ -45,9 +56,9 @@ class Header extends Component {
 
 
 export default withRouter(withTracker(() => {
-  return {  
+  return {
     userId: Meteor.userId(),
-  };  
+  };
 })(Header));
 
 
