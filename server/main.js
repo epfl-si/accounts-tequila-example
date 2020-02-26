@@ -29,24 +29,11 @@ Meteor.startup(() => {
     client: "Account Tequila",
     service: "accounts-tequila-example",
     request: ['uniqueid', 'email', 'group'],
-    require: ['group=epfl-dojo|group=idev-fsd-membres'],
+    require: ['(group=epfl-dojo|group=idev-fsd-membres)&(username=~nbo|username=~cha)'],
     control: ['/private', '/private/editor'],
     getUserId(tequila) {
       //debug(tequila);
       console.debug(tequila);
-
-      // All members of the group 'accounts-tequila-example' get a role
-      if (tequila.group.includes('accounts-tequila-example')) {
-        // Some of the members are granted admin role, based on their username
-        if (['charmier', 'nborboen'].includes(tequila.user)) {
-          Roles.setUserRoles(tequila.uniqueid, ['admin'], Roles.GLOBAL_GROUP);
-          console.debug(tequila.user, 'ADMIN ROLE');
-        // All others members are granted the editor role...
-        } else {
-          Roles.setUserRoles(tequila.uniqueid, ['editor'], Roles.GLOBAL_GROUP);
-          console.debug(tequila.user, 'EDITORS ROLE');
-        }
-      }
 
       return tequila.uniqueid;
     },
